@@ -1,2 +1,1 @@
-# node-crypto-trading-bot
-A Cryptocurrency Trading Bot, built with Node.js
+Clone from and create branches from this branch
