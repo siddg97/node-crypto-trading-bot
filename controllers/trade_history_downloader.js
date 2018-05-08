@@ -1,5 +1,6 @@
 /*
-downloads trading history for a specific coin over a specific timeframe and saves as a JSON file into /history
+  downloads trading history for a specific coin over a specific timeframe and 
+  saves as a JSON file into /history
 */
 
 const binance = require('binance');
@@ -52,13 +53,14 @@ async function promptUserForInfo() {
     await askLimit();
     params.startTime = await promptTime("start");
     params.endTime = await promptTime("end");
-    await console.log(params);
     await rl.close();
   }
 
   await console.log("Please enter the requested information to continue with your historical data request.");
 
   await start();
+
+  return params;
 
 }
 
