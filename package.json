@@ -9,6 +9,7 @@
   "dependencies": {
     "binance-api-node": "0.7.6",
     "express": "^4.16.3",
+    "json2csv": "^4.1.2",
     "jsonfile": "^4.0.0",
     "moment": "2.22.1",
     "mongoose": "5.0.17",

@@ -1,10 +1,6 @@
 console.log("App Started.");
 
 const mongoose = require('mongoose');
-const tradingHistory = require('./controllers/trade_history_downloader.js');
+const tradingHistory = require('./controllers/trading-algo-generator/tradeHistoryDownloader.js');
 
-
-
-
-
-
+tradingHistory();
