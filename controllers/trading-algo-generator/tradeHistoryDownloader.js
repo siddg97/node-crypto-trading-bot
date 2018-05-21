@@ -5,28 +5,35 @@ const fs = require('fs');
 const jsonfile = require('jsonfile');
 const getParams = require('./getParams')
 
-//ask user for inf
-
 const client = Binance();
 
 //check the connection from Binance
-client.time().then(time => console.log(time))
+client.time().then(
+  (time) => { 
+    if(time != null) {
+      console.log("Connected to Binance.");
+    }
+    else {
+      console.log("Failed to connect to Binance.");
+    }
+  }
+) 
 
 
 function getCandles() {
 
   var params = getParams();
 
-  console.log("params = ");
-  console.log(params);
+  // console.log("params = ");
+  // console.log(params);
 
-  var file = '/home/vinsonly/node-crypto-trading-bot/history-files/history.json'
+  var file = appRoot + '/history-files/history.json';
 
   var jsonResult;
 
   client.candles(params)
   .then((result) => {
-    console.log(result);
+    console.log("Received results from request.");
     jsonResult = result;
   })
   .then(() => {
@@ -34,7 +41,7 @@ function getCandles() {
       console.log(err);
     })
   })
-  .then(()=> {console.log("done")})
+  .then(()=> {console.log("Done.")})
   .catch( (error) => {console.log(error)} );
 
 }

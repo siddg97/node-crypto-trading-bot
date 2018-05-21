@@ -1,9 +1,9 @@
-var tulind = require('tulind');
-var talib = require('talib');
 var techind = require('technicalindicators');
+var tulind = require('tulind');
 
 function checkVersions() {
-  console.log("tulid: " + );
-  console.log("tallb: " + );
-  console.log("techind: " + );
+    console.log("tulind version: " + tulind.version);
 }
+
+module.exports.checkVersions = checkVersions;
+
