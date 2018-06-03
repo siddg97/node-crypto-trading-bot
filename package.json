@@ -14,6 +14,7 @@
     "moment": "2.22.1",
     "mongoose": "5.0.17",
     "progress": "2.0.0",
+    "talib": "^1.0.5",
     "technicalindicators": "^1.1.11",
     "tulind": "^0.8.10"
   },
