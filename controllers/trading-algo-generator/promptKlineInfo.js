@@ -1,6 +1,6 @@
 /*
   downloads trading history for a specific coin over a specific timeframe and 
-  saves as a JSON file into /history
+  saves as a JSON file into history.json
 */
 
 const moment = require('moment');

@@ -12,8 +12,7 @@ client.time().then(
   (time) => { 
     if(time != null) {
       console.log("Connected to Binance.");
-    }
-    else {
+    } else {
       console.log("Failed to connect to Binance.");
     }
   }
@@ -29,21 +28,20 @@ function getCandles() {
 
   var file = appRoot + '/history-files/history.json';
 
-  var jsonResult;
-
   client.candles(params)
   .then((result) => {
     console.log("Received results from request.");
-    jsonResult = result;
+    return result;
   })
-  .then(() => {
+  .then((jsonResult) => {
     jsonfile.writeFile(file, jsonResult, {spaces: 2}, (err) => {
-      console.log(err);
+      if(err) {
+        console.log("error: ", err);
+      }
     })
   })
-  .then(()=> {console.log("Done.")})
-  .catch( (error) => {console.log(error)} );
-
+  .then(()=> {console.log("Finished writing results to json file.")})
+  .catch( (error) => {console.log("error:", error)} );
 }
 
 module.exports = getCandles;

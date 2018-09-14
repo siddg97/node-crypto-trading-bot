@@ -13,7 +13,7 @@ function getParams() {
 
   params.startTime = 1522540800000;
 
-  params.endTime = 1522627200000;
+  params.endTime = 1523627200000;
 
   return params;
 }

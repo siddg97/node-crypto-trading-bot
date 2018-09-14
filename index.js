@@ -1,5 +1,3 @@
-console.log("App Started.");
-
 const mongoose = require('mongoose');
 const path = require('path');
 
@@ -7,16 +5,19 @@ const tradingHistory = require('./controllers/trading-algo-generator/tradeHistor
 const taCalculator = require('./controllers/trading-algo-generator/taCalculator.js');
 const taList = require('./controllers/trading-algo-generator/taList.js');
 
-global.appRoot = __dirname;
+global.appRoot = require('app-root-path');
 
-async function projectProcedure() {
+
+function projectProcedure() {
     //get candle line history
-    await tradingHistory();
+    console.log("Running trading bot.");
+    tradingHistory();
 
     //check TA library versions
-    await taCalculator.checkVersions();
+    taCalculator.checkVersions();
 
-    await taList.logTaLibList();
+    taCalculator.taCalculator();
+
 }
 
 projectProcedure();
